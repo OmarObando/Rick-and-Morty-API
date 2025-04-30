@@ -15,6 +15,7 @@ const verifyBasicAuth = (req, res, next) => {
         res.status(codes.UNAUTORIZED).send(statusMessages.UNAUTORIZED);
         return;
     }
+    next();
 };
 
 const checkCredentials = (user, pass) => {
