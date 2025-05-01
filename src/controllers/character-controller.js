@@ -16,7 +16,7 @@ const getCharacter = async (req, res) => {
         const aliveCharaters = getAliveCharacters(rawCharacters);
         const formattedCharacters = formatCharacters(aliveCharaters);
         const characters = replaceSpaces(formattedCharacters);
-        res.send({message: statusMessages.OK, characters});
+        res.send({message: statusMessages.OK, results : characters});
     }catch(err){
         res.status(codes.SERVER_ERROR);
         res.send({error: err.message});
