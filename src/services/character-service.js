@@ -11,9 +11,11 @@ const getCharacters = async (page = 1) => {
     try {
         const response = await axios.get(url, {
         });
-        return response.results;
+        if (response.status !== 200) {
+            throw new Error(`Error fetching characters: ${response.statusText}`);
+        }
+        return response.data.results;
     } catch (error) {
-        console.error('Error fetching characters:', error);
         throw error;
     }
 }
