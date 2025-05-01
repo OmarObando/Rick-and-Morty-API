@@ -9,8 +9,7 @@ const getCharacters = async (page = 1) => {
         url = `${RAM_URL}/?page=${page}`;
     }
     try {
-        const response = await axios.get(url, {
-        });
+        const response = await axios.get(url);
         if (response.status !== 200) {
             throw new Error(`Error fetching characters: ${response.statusText}`);
         }

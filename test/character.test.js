@@ -23,7 +23,7 @@ describe('GET /api/characters not auth', () => {
 })
 
 describe('GET /api/characters bad auth', () => {
-    it('Debe retornar un status 401 sin autenticacion',
+    it('Debe retornar un status 401 bad auth',
         async () => {
             const response = await request(app).get('/api/character/').auth('root', 'admin');
             expect(response.status).toBe(401);
